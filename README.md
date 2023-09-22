@@ -63,10 +63,6 @@ To add more programs to be launched automatically:
 
 Feel free to fork this project, submit pull requests, or open issues to report bugs or suggest enhancements.
 
-## License
-
-This project is released under the MIT License. See the `LICENSE` file for details.
-
 ## Disclaimer
 
 This script is provided as-is, without any warranty. Use it at your own risk. The author is not responsible for any adverse consequences resulting from its use.
