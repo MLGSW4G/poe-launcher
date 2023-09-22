@@ -50,6 +50,8 @@ Run the `poe_launcher.ahk` file as an Administrator (right-click and select "Run
 
 To close utility programs or all the programs including Path of Exile, right-click the system tray icon and select either `Close helpers` or `Close everything`.
 
+To prevent a specific AutoHotkey script from displaying its own tray icon, add the `#NoTrayIcon` directive at the beginning of the AHK script.
+
 ## Adding additional programs
 
 To add more programs to be launched automatically:
