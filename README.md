@@ -1,11 +1,12 @@
 # Launch Path of Exile and Multiple Helpful Programs
 
-This script allows you to simultaneously launch Path of Exile along with several associated utility programs, such as Awakened PoE Trade, Path of Building, LaillokenUI, and other user-specified programs. The primary goal is to simplify and automate the process of launching these tools in one shot, saving time and reducing manual effort.
+This script allows you to simultaneously launch Path of Exile along with several associated utility programs, such as Awakened PoE Trade, Path of Building, LaillokenUI, and other user-specified programs. The primary goal is to simplify and automate the process of launching and closing these tools with a single command, saving time and reducing manual effort.
 
 ## Features
 
 - Automatically launch Path of Exile and utility programs with a single command
-- Easily add or remove programs in the configuration file, a program with an empty path will not be launched
+- Easily add or remove programs in the configuration file
+- Close all utility programs or everything, including Path of Exile, with a single click (`Close helpers`, `Close everything` options)
 
 ## Requirements
 
@@ -46,6 +47,8 @@ This script allows you to simultaneously launch Path of Exile along with several
 ## Usage
 
 Run the `poe_launcher.ahk` file as an Administrator (right-click and select "Run as administrator").
+
+To close utility programs or all the programs including Path of Exile, right-click the system tray icon and select either `Close helpers` or `Close everything`.
 
 ## Adding additional programs
 
