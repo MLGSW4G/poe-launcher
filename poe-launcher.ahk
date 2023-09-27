@@ -5,11 +5,19 @@
 CreateTrayMenu()
 
 configFile := "config.ini"
-RunAppsOnStart := ReadConfig(configFile, "Settings", "RunAppsOnStart")
-Delay := ReadConfig(configFile, "Settings", "Delay")
 
-; Added explicit initialization of appPaths using the [Paths] section
-appPaths := ReadConfig(configFile, "Paths")
+If (FileExist(configFile)) {
+    RunAppsOnStart := ReadConfig(configFile, "Settings", "RunAppsOnStart")
+    Delay := ReadConfig(configFile, "Settings", "Delay")
+    appPaths := ReadConfig(configFile, "Paths")
+    
+    If (RunAppsOnStart = "1") {
+        RunApplications(appPaths, Delay)
+    }
+} Else {
+    MsgBox, 16, Error, Configuration file not found!`nPlease provide "config.ini"
+    ExitApp
+}
 
 If (RunAppsOnStart = "1") {
     RunApplications(appPaths, Delay)
@@ -17,10 +25,11 @@ If (RunAppsOnStart = "1") {
 
 CreateTrayMenu() {
     Menu, Tray, Icon, % A_WinDir "\System32\shell32.dll", 132
+    Menu, Tray, Tip, poe-launcher
+    Menu, Tray, NoStandard
     Menu, Tray, Add, Run applications, RunApplications
     Menu, Tray, Add, Close everything, CloseApplications
     Menu, Tray, Add, Close helpers, CloseHelpers
-    Menu, Tray, NoStandard
     Menu, Tray, Default, Close everything
 }
 
@@ -43,6 +52,7 @@ CloseApplications() {
     CloseApplication("Awakened PoE Trade.exe")
     CloseApplication("Path of Building.exe")
     CloseApplication("PathOfExileSteam.exe")
+    CloseApplication("PathOfExile.exe")
     CloseAllAhkScripts()
     ExitApp
 }
@@ -53,6 +63,7 @@ CloseHelpers() {
     CloseAllAhkScripts()
     ExitApp
 }
+
 
 CloseApplication(exeName) {
     Process, Close, % exeName
